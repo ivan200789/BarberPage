@@ -1,4 +1,4 @@
 # BarberPage
-# la aplicacion esta en proceso
-npm install
+# La aplicacion esta en proceso
+ejecute npm install
 
