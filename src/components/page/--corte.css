@@ -1,0 +1,82 @@
+
+.form{
+  margin-left: 20%;
+  margin-bottom: 3%;
+}
+.form-row {
+  display: flex;
+  justify-content: space-between; /* Adjust spacing as needed */
+}
+.form-group {
+  flex: 1; /* Equal width for each group */
+}
+.inp{ 
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 50%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+.tabla{
+    margin: 0 auto;
+}
+.table {
+    width: 80%;
+    margin-left: 20%;
+    border-collapse: collapse;
+  }
+
+  .table th, .table td {
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+  
+  .table th {
+
+    background-color: #f2f2f2;
+  }
+  
+  .table tr:nth-child(even) {
+
+    background-color: #f2f2f2;
+  }
+
+  .btn {
+    position: relative;
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;   
+    background: linear-gradient(45deg, red 25%, white 25%, white 50%, blue 50%, blue 75%, red 75%);
+    background-size: 200% 200%;
+    animation: barber-pole-animation 3s linear infinite;
+    color: black; /* Color base del texto */
+    text-shadow: 0 0 5px white, 0 0 10px black; 
+  }
+
+  
+  .btn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  } 
+  
+  @keyframes barber-pole-animation {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 200% 200%;
+    }
+  }
