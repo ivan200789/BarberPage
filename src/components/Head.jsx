@@ -17,6 +17,9 @@ export default function Head () {
             <Link to="/turnos">
                 Turnos
             </Link>
+            <Link to="/inventario">
+                Inventario
+            </Link>
           </li>
         </ul>
       </nav>
