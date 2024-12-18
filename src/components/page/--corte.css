@@ -48,6 +48,7 @@
   }
 
   .btn {
+    margin-top: 10px;
     position: relative;
     display: inline-block;
     padding: 14px 24px;

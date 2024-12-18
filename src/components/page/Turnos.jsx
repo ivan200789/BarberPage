@@ -3,19 +3,32 @@ import { context } from "../Context/context";
 import Table from "react-bootstrap/Table";
 import EstadoDeCorte from "../minicomponentes/EstadoDeCorte";
 
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css"; // Importa los estilos predeterminados
+
+
+
 export default function Turnos() {
+  const [phone, setPhone] = useState("");
+
+
   const { turnos, setTurnos } = useContext(context);
   const [nuevoTurno, setNuevoTurno] = useState({
     cliente: "",
     trabajo: "",
     hora: "",
     fecha: "",
+    telefono:null,
     pago: "",
   });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setNuevoTurno({ ...nuevoTurno, [name]: value });
+  const handleChange = (event, nameOverride) => {
+    if (nameOverride) {
+      // Para react-phone-input-2, que pasa el valor directamente
+      setNuevoTurno((prev) => ({ ...prev, [nameOverride]: event }));
+    } else {
+      const { name, value } = event.target;
+      setNuevoTurno((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const agregarFila = () => {
@@ -24,16 +37,28 @@ export default function Turnos() {
       nuevoTurno.trabajo &&
       nuevoTurno.hora &&
       nuevoTurno.fecha &&
+      nuevoTurno.telefono &&
       nuevoTurno.pago
     ) {
-      setTurnos([...turnos, nuevoTurno]);
+      const fechaHora = new Date(`${nuevoTurno.fecha}T${nuevoTurno.hora}:00`);
+
+      // Agrega el nuevo turno y ordena por fecha y hora
+      const turnosOrdenados = [...turnos, nuevoTurno].sort((a, b) => {
+        const fechaHoraA = new Date(`${a.fecha}T${a.hora}:00`);
+        const fechaHoraB = new Date(`${b.fecha}T${b.hora}:00`);
+        return fechaHoraA - fechaHoraB; // Orden ascendente
+      });
+  
+      setTurnos(turnosOrdenados);
       setNuevoTurno({
         cliente: "",
         trabajo: "",
         hora: "",
         fecha: "",
+        telefono: "",
         pago: "",
       });
+      
     } else {
       alert("Por favor, completa todos los campos antes de agregar una fila.");
     }
@@ -45,6 +70,7 @@ export default function Turnos() {
 
       <div className="form">
         <div className="form-row">
+
           <div className="form-group">
             <h3>Cliente</h3>
             <input
@@ -92,6 +118,7 @@ export default function Turnos() {
               onChange={handleChange}
             />
           </div>
+
           <div className="form-group">
             <h3>Medio de pago</h3>
             <select
@@ -110,6 +137,16 @@ export default function Turnos() {
             </select>
           </div>
         </div>
+
+          <div className="form-group">
+            <h3>Teléfono</h3>
+            <PhoneInput
+              country={"ar"} // Código del país inicial (Argentina)
+              placeholder="Ingresa tu número"
+              value={nuevoTurno.telefono}
+              onChange={(phone) => handleChange(phone, "telefono")}
+            />
+          </div>
         <div className="form-row">
           <button onClick={agregarFila} className="btn btn-4">
             Guardar
@@ -129,6 +166,8 @@ export default function Turnos() {
             <th>Hora</th>
             <th>Fecha</th>
             <th>Medio de pago</th>
+            <th>Teléfono</th>
+
           </tr>
         </thead>
         <tbody>
@@ -140,6 +179,8 @@ export default function Turnos() {
               <td>{turno.hora}</td>
               <td>{turno.fecha}</td>
               <td>{turno.pago}</td>
+              <td>{turno.telefono}</td>
+
             </tr>
           ))}
         </tbody>

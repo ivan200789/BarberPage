@@ -14,6 +14,7 @@ const StateCortes = ({children}) =>{
         trabajo:"",  
         hora:"",
         fecha: "", 
+        telefono: null,
         pago: "" 
 
     },]);
