@@ -4,6 +4,7 @@ import Corte from './components/page/Corte';
 import "./App.css"
 import StateCortes from './components/Context/StateCortes';
 import Turnos from "./components/page/Turnos"
+import Inventario from './components/page/Inventario';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Corte />} />
           <Route path="/turnos" element={<Turnos />} />
+          <Route path="/inventario" element={<Inventario />} />
 
         </Routes>
       </BrowserRouter>

@@ -1,11 +1,11 @@
-import moment from 'moment';
 
-export default function EstadoDeCorte(params) {
-    const now = moment();
+
+
+export default function EstadoDeCorte() {
 
     return(
         <>
-            <p>Son las: {now.format('dddd')}</p>
+        <h1>GOLASDWDE</h1>
         </>
     )
 }

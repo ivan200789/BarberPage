@@ -9,7 +9,6 @@ import "react-phone-input-2/lib/style.css"; // Importa los estilos predeterminad
 
 
 export default function Turnos() {
-  const [phone, setPhone] = useState("");
 
 
   const { turnos, setTurnos } = useContext(context);
