@@ -23,6 +23,9 @@ const StateCortes = ({children}) =>{
         producto:null,
         marca:null,
     },]);
+
+ 
+
     return(
         <context.Provider value={{filas, setFilas, turnos, setTurnos, productos, setProductos}}>
             {children}

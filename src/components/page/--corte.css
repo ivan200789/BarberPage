@@ -60,7 +60,7 @@
     cursor: pointer;
     overflow: hidden;
     border-radius: 10px;   
-    background: linear-gradient(45deg, red 25%, white 25%, white 50%, blue 50%, blue 75%, red 75%);
+    background: linear-gradient(45deg, red 25%, white 25%, white 50%, blue 50%, blue 75%, red 75%); 
     background-size: 200% 200%;
     animation: barber-pole-animation 3s linear infinite;
     color: black; /* Color base del texto */

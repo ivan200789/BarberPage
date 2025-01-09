@@ -65,6 +65,7 @@ export default function Inventario() {
             <tr key={index}>
               <td>{prod.producto}</td>
               <td>{prod.marca}</td>
+              <td>{EstadodeProducto}</td>
               
             </tr>
         ))}

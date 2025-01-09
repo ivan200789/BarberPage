@@ -2,6 +2,7 @@ import Table from 'react-bootstrap/Table';
 import stateCortes from '../Context/StateCortes';
 
 import { context } from '../Context/context';
+
 import { useContext } from 'react';
 
 import "./--corte.css"
