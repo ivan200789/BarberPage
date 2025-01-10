@@ -83,7 +83,7 @@ export default function Corte() {
         </tr>
       </thead>
       <tbody>
-      {filas.map((fila, index) => (
+      {filas?.map((fila, index) => (
         <tr key={index}>
           <td>{fila.nombre}</td>
           <td>{fila.barbero}</td>

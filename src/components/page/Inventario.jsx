@@ -35,7 +35,9 @@ export default function Inventario() {
 
     return(
         <>
+        <h1 style={{ textAlign: "center", fontSize: 40 }}>Inventario</h1>
         <div className="form">
+
         <div className="form-row">
             <h3>Producto</h3>
             <input type="text" className='inp' name="producto" value={nuevoProducto.producto} onChange={handleChange}/> 
@@ -61,7 +63,7 @@ export default function Inventario() {
           </tr>
         </thead>
         <tbody>
-        {productos.map((prod, index) => (
+        {productos?.map((prod, index) => (
             <tr key={index}>
               <td>{prod.producto}</td>
               <td>{prod.marca}</td>

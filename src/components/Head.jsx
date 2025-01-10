@@ -11,7 +11,7 @@ export default function Head () {
       <nav>
         <ul>
           <li>
-            <Link to="/cortes">Corte</Link>
+            <Link to="/corte">Corte</Link>
             <Link to="/turnos">Turnos</Link>
             <Link to="/inventario">Inventario</Link>
           </li>

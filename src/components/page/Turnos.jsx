@@ -170,7 +170,7 @@ export default function Turnos() {
           </tr>
         </thead>
         <tbody>
-          {turnos.map((turno, index) => (
+        {turnos?.map((turno, index) => (
             <tr key={index}>
               <td>{EstadoDeCorte}</td>
               <td>{turno.cliente}</td>
